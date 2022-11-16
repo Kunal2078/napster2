@@ -1,0 +1,648 @@
+body {
+  align-self: flex-start;
+}
+
+#navbar {
+  position: fixed;
+  top: 0%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: rgb(20, 20, 20);
+
+  z-index: 11;
+  width: 100%;
+  height: 60px;
+  padding-top: 10px;
+
+  box-shadow: #131212;
+}
+
+#navbar-searchbar {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 50px;
+}
+
+/* #searchbar{
+    background-color: #131212;
+    color: aliceblue;
+    border-color:#131212;
+background: transparent;
+}
+#search-btn{
+    background-color: black;
+    border-radius: 50%;
+    border-color: aliceblue;
+    color: aliceblue;
+    border: none;
+    background: transparent;
+     
+} */
+.carousel{
+  z-index: 10;
+  top:43px;
+  height: 68vh;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  animation: carousel 3s step-end forwards ;
+}
+
+@keyframes carousel {
+  0%{
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  100%{
+    display: flex;
+    
+  }
+  
+}
+.carousel-inner{
+  width: 93% !important;
+}
+.carousel-indicators{
+  margin-bottom: -1rem !important;
+}
+.carousel-item>img{
+  object-fit: cover;
+  height: 75vh;
+  aspect-ratio: 16/9;
+  width:50%;
+  filter: brightness(0.8);
+}
+
+
+
+#container-fluid {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#btn {
+  background: transparent;
+  border: none;
+}
+
+
+.slider {
+  --slider-index: 0;
+  display: flex;
+  gap: 0.25rem;
+  scroll-behavior: smooth;
+  position: relative;
+  scroll-padding-inline: 3rem;
+  flex-grow: 1;
+  transform: translateX(calc(var(--slider-index) * -22%));
+  transition: transform 250ms ease-in-out;
+  padding-left: 45px !important;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+
+.image-container {
+  background: #fff;
+  object-fit: cover;
+  backdrop-filter: opactiy(0.1);
+  animation: card-loading 3s linear;
+}
+.card:hover{
+  transform: scale(1.2);
+  transition: scale 50ms ease;
+  z-index: 1;
+}
+.card-title{
+  display: none;
+  
+}
+.card:hover .card-title{
+  display:flex;
+  align-items: center;
+  /* position:absolute; */
+}
+.image-container > img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  z-index: 10;
+  filter: none;
+  border: 0ch;
+  border: none !important;
+  border-radius: 0%;
+  animation: imagefade 3s ease-in-out;
+}
+.image-container>img:hover{
+  filter: brightness(0.50);
+}
+#card {
+  background-color: rgb(20, 20, 20);
+  flex: 0 0 20%;
+  border: 0px;
+  position: relative;
+}
+
+h5 {
+  text-align: center;
+  color: aliceblue;
+  font-family: Netflix Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding: 10px;
+  margin: 0%;
+  /* animation: fading 3s ease-in-out; */
+}
+
+h2 {
+  color: aliceblue;
+  font-family: Netflix Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin-left: 60px;
+  width: 19vw;
+  /* padding-left: 60px !important; */
+}
+
+.container1 {
+  position: relative;
+
+  padding-top: 50px;
+  margin-top: 35px;
+  overflow: hidden;
+}
+
+.netflix-logo {
+  size: 2em;
+  width: 100px;
+  height: 40px;
+  position: relative;
+}
+
+.navigation-links {
+  color: rgb(255, 255, 255);
+  font-family: Netflix Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin: 18px;
+  margin-left: 0;
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: black; */
+  background: transparent;
+}
+.dropdown-browse {
+  display: none;
+}
+.handle {
+  background: rgb(0 0 0 /0);
+  position: absolute;
+  z-index: 10;
+  padding: 01rem;
+  opacity: 0;
+  overflow: hidden;
+  border: none;
+  flex-grow: 0;
+  cursor: pointer;
+  font-size: 5rem;
+  color: aliceblue;
+  transition: backgroun-color ease-in-out;
+}
+
+.handle:hover {
+  background: rgb(0 0 0 /0.5);
+}
+
+.text {
+  transition: transform 150 ease-in-out;
+}
+
+.handle:hover .text {
+  transform: scale(1.2);
+}
+
+.prev {
+  top: 16px;
+  left: 0;
+  padding: 0px;
+  height: 181px;
+  width: 52px;
+}
+
+.next {
+  top: 16px;
+  right: 0;
+  padding: 0px;
+  height: 181px;
+  width: 52px;
+}
+
+.slider-container {
+  z-index: 10;
+  position: relative;
+  padding: 01rem;
+}
+
+.slider-container :where(.next, .prev) {
+  opacity: 0;
+}
+
+.slider-container:hover :where(.next, .prev) {
+  opacity: 1;
+}
+
+/* //search-bar-css// */
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.input-search {
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  background: transparent;
+  padding-right: 40px;
+  color: #fff;
+}
+
+.input-search::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.btn-search {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color: #ffffff;
+  background-color: transparent;
+  pointer-events: painted;
+}
+
+.btn-search:focus ~ .input-search {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+.input-search:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+@media screen and (max-width: 1000px) {
+  #navbar {
+    width: auto;
+    top: 0%;
+    z-index: 12;
+  }
+  .netflix-logo{
+    width: 95px;
+    height: 32px;
+  }
+ 
+  .carousel{
+  
+    top:43px;
+    height: 20vh;
+
+  }
+
+  
+  .carousel-indicators [data-bs-target] {
+    height: 1px !important;
+    width: 15px !important;
+ }
+  .carousel-item>img{
+ 
+    height: 23vh;
+  
+  }
+
+  #card {
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .image-container > img {
+    animation: imagefade 3s ease-in-out ;
+  }
+  h5 {
+    font-size: 0.9rem !important;
+    margin: 0%;
+    animation: fading 3s ease-in-out ;
+  }
+  .slider{
+    padding-left: 20px !important;
+  }
+  .prev,.next{
+    height:73px ;
+    width: 23px;
+  }
+  .text{
+    height: 50px;
+    font-size: 2rem;
+  }
+  .dropdown-browse {
+    display: block;
+  }
+  .navigation-links {
+    display: none;
+  }
+  .container1 {
+    animation: loading 3s;
+  }
+  h2 {
+    font-size: 1rem !important;
+    width: 37vw;
+    margin-left: 35px;
+    animation: shine 3s ease-in-out forwards;
+  }
+  @keyframes loading {
+    0% {
+      background-color: rgb(20 20 20);
+    }
+    100% {
+      background-color: rgb(20 20 20);
+    }
+  }
+  @keyframes shine {
+    0% {
+      width: 10vw;
+      background-color: white;
+      text-decoration: none;
+      color: white;
+      /* color: rgb(20, 20, 20); */
+      opacity: 0.1;
+    
+      overflow: hidden;
+    }
+    10% {
+      width: 100px;
+      background-color: #fff;
+      opacity: 0.2;
+      color: #ffffff;
+     
+    }
+    20% {
+      width: 56vw;
+      opacity: 0.3;
+      background-color: #fff;
+      color: #ffffff;
+      
+    }
+    30% {
+      width: 56vw;
+      opacity: 0.2;
+      color: #ffffff;
+      background-color: #fff;
+
+    }
+    40% {
+      width: 56vw;
+      opacity: 0.1;
+      color: #ffffff;
+      background-color: #fff;
+      
+    }
+    50% {
+      width: 56vw;
+      opacity: 0.2;
+      color: #ffffff;
+      background-color: #fff;
+     
+    }
+    60% {
+      width: 56vw;
+      opacity: 0.3;
+    }
+    70% {
+      width: 56vw;
+      opacity: 0.2;
+    }
+    80% {
+      width: 56vw;
+      opacity: 0.1;
+    }
+    90% {
+      width: 56vw;
+      opacity: 0.2;
+    }
+    100% {
+    
+      opacity: 0.1;
+      color: #ffffff;
+      background-color: #fff;
+      width: 35vw;
+      height: 4vh;
+      overflow: hidden;
+    }
+  }
+  @keyframes fading {
+    0% {
+      opacity: 0;
+      color: rgba(20 20 20);
+    }
+    100% {
+      opacity: 0;
+      color: rgba(20 20 20);
+    }
+  }
+  @keyframes imagefade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes card-loading {
+    0% {
+      opacity: 0.1;
+    }
+    10% {
+      opacity: 0.2;
+    }
+    20% {
+      opacity: 0.3;
+    }
+    30% {
+      opacity: 0.2;
+    }
+    40% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    60% {
+      opacity: 0.3;
+    }
+    70% {
+      opacity: 0.2;
+    }
+    80% {
+      opacity: 0.1;
+    }
+    90% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0.1;
+    }
+  }
+}
+.container1 {
+  animation: loading 3s;
+}
+h2 {
+  animation: shine 3s ease-in-out;
+}
+@keyframes loading {
+  0% {
+    background-color: rgb(20 20 20);
+  }
+  100% {
+    background-color: rgb(20 20 20);
+  }
+}
+@keyframes shine {
+  0% {
+    background-color: white;
+    color: white;
+    opacity: 0.1;
+    overflow: hidden;
+  }
+  10% {
+    background-color: #fff;
+    opacity: 0.2;
+    color: #ffffff;
+  }
+  20% {
+    opacity: 0.3;
+    background-color: #fff;
+    color: #ffffff;
+  }
+  30% {
+    opacity: 0.2;
+    color: #ffffff;
+    background-color: #fff;
+  }
+  40% {
+    opacity: 0.1;
+    color: #ffffff;
+    background-color: #fff;
+  }
+  50% {
+    opacity: 0.2;
+    color: #ffffff;
+    background-color: #fff;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.1;
+    color: #ffffff;
+    background-color: #fff;
+
+    overflow: hidden;
+  }
+}
+@keyframes fading {
+  0% {
+    opacity: 0;
+    color: rgba(20 20 20);
+  }
+  100% {
+    opacity: 0;
+    color: rgba(20 20 20);
+  }
+}
+@keyframes imagefade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes card-loading {
+  0% {
+    opacity: 0.1;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
